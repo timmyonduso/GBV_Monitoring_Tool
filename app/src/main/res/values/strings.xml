@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GBV_Monitoring_Tool</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="DASHBOARD">DASHBOARD</string>
+    <string name="Home">Home</string>
+    <string name="Learn">Learn</string>
+    <string name="Report">Report</string>
+    <string name="Profile">Profile</string>
+
+
+</resources>

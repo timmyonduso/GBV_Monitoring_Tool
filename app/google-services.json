@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830580976321",
+    "project_id": "gbv-monitoring-tool",
+    "storage_bucket": "gbv-monitoring-tool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830580976321:android:361fa63818e1e3ac350240",
+        "android_client_info": {
+          "package_name": "com.example.gbv_monitoring_tool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830580976321-2olccvbcfncsi8iv7nk1lausg7r3fmki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmszm_XLopJdugSqezy8KSsDqIRaHDLTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830580976321-2olccvbcfncsi8iv7nk1lausg7r3fmki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
