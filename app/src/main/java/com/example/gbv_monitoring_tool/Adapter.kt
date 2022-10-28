@@ -21,13 +21,11 @@ class Adapter(var contxt: Context, var resources:Int, var items:List<Model>) :
         val titleTextView: TextView =view.findViewById(R.id.textView1)
         val descriptionTextView:TextView=view.findViewById(R.id.textView2)
 
-        var mItem:Model=items[position]
+        val mItem:Model=items[position]
         imageView.setImageDrawable(contxt.resources.getDrawable(mItem.img))
+
         titleTextView.text=mItem.title
         descriptionTextView.text =mItem.description
-
-
-
 
 
         return view

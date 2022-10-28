@@ -7,6 +7,13 @@
     <string name="Learn">Learn</string>
     <string name="Report">Report</string>
     <string name="Profile">Profile</string>
+    <string name="Learnmore">Learn more</string>
+    <string name="Jointhecommunity">Join the community</string>
+    <string name="Divulge">Divulge an incident</string>
+    <string name="Connect">Connect wth professionals</string>
+    <string name="TODO">TODO</string>
+
+
 
 
 </resources>

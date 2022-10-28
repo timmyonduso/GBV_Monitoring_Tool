@@ -10,9 +10,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
-    var LoginEmail: EditText? = null
-    var LoginPassword: EditText? = null
-    var Registerhere: TextView? = null
+    var loginEmail: EditText? = null
+    var loginPassword: EditText? = null
+    var registerhere: TextView? = null
     var buttonlogin: Button? = null
     var mAuth: FirebaseAuth? = null
 
@@ -21,32 +21,32 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        LoginEmail = findViewById(R.id.inputemail)
-        LoginPassword = findViewById(R.id.inputpassword)
-        Registerhere = findViewById(R.id.gotoRegister)
+        loginEmail = findViewById(R.id.inputemail)
+        loginPassword = findViewById(R.id.inputpassword)
+        registerhere = findViewById(R.id.gotoRegister)
         buttonlogin = findViewById(R.id.btn_login)
 
         mAuth = FirebaseAuth.getInstance()
 
         buttonlogin!!.setOnClickListener {
-            LoginUser()
+            loginUser()
         }
-        Registerhere!!.setOnClickListener {
+        registerhere!!.setOnClickListener {
             startActivity(Intent(this,SignUpActivity::class.java))
         }
 
     }
 
-    fun LoginUser(){
-        var email = LoginEmail!!.text.toString().trim()
-        var password = LoginPassword!!.text.toString().trim()
+    private fun loginUser(){
+        val email = loginEmail!!.text.toString().trim()
+        val password = loginPassword!!.text.toString().trim()
 
         if (email.isEmpty()){
-            LoginEmail!!.error = "Email cannot be empty"
-            LoginEmail!!.requestFocus()
+            loginEmail!!.error = "Email cannot be empty"
+            loginEmail!!.requestFocus()
         }else if(password.isEmpty()){
-            LoginPassword!!.error = "Password cannot be empty"
-            LoginPassword!!.requestFocus()
+            loginPassword!!.error = "Password cannot be empty"
+            loginPassword!!.requestFocus()
         }else {
             mAuth!!.signInWithEmailAndPassword(email,password).addOnCompleteListener{
                     task->

@@ -10,44 +10,44 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpActivity : AppCompatActivity() {
-    var RegEmail: EditText? = null
-    var RegPassword: EditText? = null
-    var ConfirmPassword: EditText? = null
-    var LoginHere: TextView? = null
-    var Register: Button? = null
+    var regEmail: EditText? = null
+    var regPassword: EditText? = null
+    var confirmPassword: EditText? = null
+    var loginHere: TextView? = null
+    var register: Button? = null
     var mAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        RegEmail = findViewById(R.id.inputemail)
-        RegPassword = findViewById(R.id.inputpassword)
-        ConfirmPassword = findViewById(R.id.confirm_password)
-        LoginHere = findViewById(R.id.loginInstead)
-        Register = findViewById(R.id.btn_signup)
+        regEmail = findViewById(R.id.inputemail)
+        regPassword = findViewById(R.id.inputpassword)
+        confirmPassword = findViewById(R.id.confirm_password)
+        loginHere = findViewById(R.id.loginInstead)
+        register = findViewById(R.id.btn_signup)
 
         mAuth = FirebaseAuth.getInstance()
 
-        Register!!.setOnClickListener {
+        register!!.setOnClickListener {
             createUser()
         }
-        LoginHere!!.setOnClickListener {
+        loginHere!!.setOnClickListener {
             startActivity(Intent(this,LoginActivity::class.java))
         }
 
     }
 
-    fun createUser(){
-        var email = RegEmail!!.text.toString().trim()
-        var password = RegPassword!!.text.toString().trim()
+    private fun createUser(){
+        val email = regEmail!!.text.toString().trim()
+        val password = regPassword!!.text.toString().trim()
 
         if (email.isEmpty()){
-            RegEmail!!.setError("Email cannot be empty")
-            RegEmail!!.requestFocus()
+            regEmail!!.setError("Email cannot be empty")
+            regEmail!!.requestFocus()
         }else if(password.isEmpty()){
-            RegPassword!!.setError("Password cannot be empty")
-            RegPassword!!.requestFocus()
+            regPassword!!.setError("Password cannot be empty")
+            regPassword!!.requestFocus()
         }else {
             mAuth!!.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
                     task->

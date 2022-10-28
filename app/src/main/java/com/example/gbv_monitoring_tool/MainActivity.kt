@@ -4,9 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
 
+
+    var mAuth: FirebaseAuth? = null
     var learnmore : CardView?= null
     var join : CardView?= null
     var divulge : CardView?= null
@@ -15,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        mAuth = FirebaseAuth.getInstance()
+
 
     learnmore = findViewById(R.id.btn1)
     join = findViewById(R.id.btn2)
@@ -37,4 +44,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,ConnectActivity::class.java))
         }
 
-    }}
+    }
+
+//    override fun onStart() {
+//        super.onStart()
+//        var user: FirebaseUser?=null
+//        user = mAuth?.currentUser
+//    }
+
+}
